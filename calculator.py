@@ -1,21 +1,34 @@
-print("=== Simple Calculator ===")
+print("=== Advanced Calculator ===")
 
-num1 = int(input("Enter first number: "))
-num2 = int(input("Enter second number: "))
+while True:
+    num1 = int(input("\nEnter first number: "))
+    num2 = int(input("Enter second number: "))
 
-addition = num1 + num2
-subtraction = num1 - num2
-multiplication = num1 * num2
+    print("\nChoose operation:")
+    print("1. Addition")
+    print("2. Subtraction")
+    print("3. Multiplication")
+    print("4. Division")
 
-if num2 != 0:
-    division = num1 / num2
-else:
-    division = "Undefined (cannot divide by zero)"
+    choice = input("Enter choice (1-4): ")
 
-print("\nResults:")
-print("Addition:", addition)
-print("Subtraction:", subtraction)
-print("Multiplication:", multiplication)
-print("Division:", division)
+    if choice == "1":
+        print("Result:", num1 + num2)
+    elif choice == "2":
+        print("Result:", num1 - num2)
+    elif choice == "3":
+        print("Result:", num1 * num2)
+    elif choice == "4":
+        if num2 != 0:
+            print("Result:", num1 / num2)
+        else:
+            print("Cannot divide by zero!")
+    else:
+        print("Invalid choice!")
 
-print("\nThank you for using the calculator!")
+    again = input("\nDo you want to calculate again? (yes/no): ")
+
+    if again.lower() != "yes":
+        print("Thank you for using the calculator!")
+        break
+
